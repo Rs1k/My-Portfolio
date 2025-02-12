@@ -1,12 +1,21 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cors());
+
+// 🔥 Раздаём статические файлы (если фронтенд лежит вместе с сервером)
+app.use(express.static(path.join(__dirname, "public")));
+
+// 📌 Главная страница (если просто заходят на сайт)
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
 app.post("/send", async (req, res) => {
     const { name, email, message } = req.body;
@@ -21,7 +30,7 @@ app.post("/send", async (req, res) => {
 
     const mailOptions = {
         from: email,
-        to: "rostiksmoliar@gmail.com",
+        to: "your-email@gmail.com",
         subject: "Новое сообщение с сайта",
         text: `Имя: ${name}\nEmail: ${email}\nСообщение: ${message}`
     };
