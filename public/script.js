@@ -8,11 +8,11 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     };
 
     try {
-        const response = await fetch("https://my-portfolio-94a3.onrender.com/send", {
+       const response = await fetch("https://my-portfolio-94a3.onrender.com/send", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)
-        });
+    });
 
         const result = await response.json();
         alert(result.message);
