@@ -36,7 +36,16 @@ body {
     font-size: 1.5em;
     margin-top: 15px;
   }
+  .card-title {
+    font-family: "Comfortaa", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
   
+.text {
+  margin-top: 0.8rem;
+}
 
 .plashka {
     display: flex;
@@ -194,6 +203,11 @@ body {
   #bottom-circle {
     margin-top: 10px;
   }
+}
+@media (max-width: 760px) {
+  .contact-class {
+    width: 70%;
+}
 }
 @media (max-width: 520px) {
   #why-me-block {
