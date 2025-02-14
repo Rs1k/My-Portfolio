@@ -13,6 +13,8 @@ app.listen(PORT, "0.0.0.0", () =>
 app.use(express.json());
 app.use(cors());
 
+app.use(cors({ origin: "*" }));
+
 // 🔥 Раздаём статические файлы (если фронтенд лежит вместе с сервером)
 app.use(express.static(path.join(__dirname, "public")));
 
