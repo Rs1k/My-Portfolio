@@ -41,11 +41,13 @@ app.post("/send", async (req, res) => {
     });
 
     const mailOptions = {
-        from: email,
-        to: "rostiksmoliar@gmail.com",
+        from: `"${name}" <rostiksmoliar@gmail.com>`,  // ✅ Gmail разрешает только ТВОЙ email
+        to: "rostiksmoliar@gmail.com",  // ✅ Письмо приходит тебе
         subject: "Новое сообщение с сайта",
-        text: `Имя: ${name}\nEmail: ${email}\nСообщение: ${message}`
-    };
+        text: `Имя: ${name}\nEmail: ${email}\nСообщение: ${message}`,  // ✅ Email пользователя внутри письма
+        replyTo: email  // ✅ Теперь "Ответить" отправит письмо пользователю
+        };
+
 
     try {
         await transporter.sendMail(mailOptions);
