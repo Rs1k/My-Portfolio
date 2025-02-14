@@ -53,5 +53,3 @@ app.post("/send", async (req, res) => {
         res.status(500).json({ message: "Ошибка отправки", error });
     }
 });
-
-app.listen(PORT, () => console.log(`Сервер запущен на порту ${PORT}`));
