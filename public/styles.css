@@ -116,35 +116,31 @@ body {
 .contact-class {
     width: 50%;
 }
-/* Стили для уведомления */
+/* Скрытое уведомление */
 .notification {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #28a745;
-  color: white;
-  padding: 15px 25px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #28a745; /* Зеленый для успешного сообщения */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* Класс для показа уведомления */
+/* Показываем уведомление */
 .notification.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(-10px);
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-10px);
 }
 
-/* Класс для скрытия уведомления */
-.hidden {
-  display: none;
-}
 
 .service-item {
     width: 150px;
