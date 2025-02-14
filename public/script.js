@@ -1,13 +1,13 @@
-document.addEventListener("DOMContentLoaded", function () {
+window.onload = function () {  // ✅ Запускаем код после загрузки страницы
     const form = document.getElementById("contact-form");
 
     if (!form) {
-        console.error("Форма не найдена!");
+        console.error("❌ Форма не найдена! Проверь `id` в `index.html`.");
         return;
     }
 
     form.addEventListener("submit", async function (e) {
-        e.preventDefault();  // 🔥 Останавливаем перезагрузку страницы
+        e.preventDefault();
 
         const formData = {
             name: this.name.value,
@@ -33,4 +33,4 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Ошибка отправки формы. Попробуйте снова!");
         }
     });
-});
+};
