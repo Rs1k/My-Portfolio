@@ -1,4 +1,7 @@
-window.onload = function () {  // ✅ Запускаем код после загрузки страницы
+console.log("✅ script.js загружен!");
+window.onload = function () {
+    console.log("✅ Страница загружена!");
+
     const form = document.getElementById("contact-form");
 
     if (!form) {
@@ -6,8 +9,11 @@ window.onload = function () {  // ✅ Запускаем код после за�
         return;
     }
 
+    console.log("✅ Форма найдена! Назначаем обработчик...");
+
     form.addEventListener("submit", async function (e) {
         e.preventDefault();
+        console.log("✅ Форма отправлена!");
 
         const formData = {
             name: this.name.value,
